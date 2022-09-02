@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CollegeRepository extends MongoRepository<College, Long> {
+public interface CollegeRepository extends MongoRepository<College, String> {
 
     Boolean existsCollegeByCollege(String college);
 

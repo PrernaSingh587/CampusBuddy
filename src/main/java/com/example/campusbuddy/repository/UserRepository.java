@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @Repository
-public interface UserRepository extends MongoRepository<User, Long> {
+public interface UserRepository extends MongoRepository<User, String> {
 
     @Query("{username : '?0' }")
     List<User> findUserByUsername(String username);

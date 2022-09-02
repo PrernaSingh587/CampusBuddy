@@ -21,7 +21,7 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     @Column(name = "firebaseId")
     private String firebaseId;
     @Column(name = "username")

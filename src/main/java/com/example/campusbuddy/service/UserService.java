@@ -33,7 +33,7 @@ public class UserService {
             return null;
     }
 
-    public Long save(UserDao userdao) {
+    public String save(UserDao userdao) {
         String email = userdao.getEmail();
         String name = userdao.getName();
         String username = userdao.getUsername();
@@ -47,7 +47,7 @@ public class UserService {
         if(userRepository.existsUserByEmail(email) ||
                 userRepository.existsUserByUsername(username)) {
             System.out.println("Already Present!");
-            return -1L;
+            return null;
         }
 
         User user = new User();
@@ -60,14 +60,14 @@ public class UserService {
         List<User> _users= userRepository.findUserByUsername(username);
         if(_users.size() == 0 ) {
             System.out.println("No User Found!");
-            return -1L;
+            return null;
         }
-        Long userId = _users.get(0).getId();
+        String userId = _users.get(0).getId();
         System.out.println(userId);
         return userId;
     }
 
-    public int addCollegeToUser(String college, Long userid) {
+    public int addCollegeToUser(String college, String userid) {
 
         try {
             if(!userRepository.existsById(userid) || !collegeRepository.existsCollegeByCollege(college))  {
@@ -94,7 +94,7 @@ public class UserService {
 
     }
 
-    public UserDao getUserById(Long id) {
+    public UserDao getUserById(String id) {
         Optional<User> user_ = userRepository.findById(id);
         User user =  user_.get();
         String username = user.getUsername();
@@ -125,7 +125,7 @@ public class UserService {
         return user.get(0);
     }
 
-    public Boolean userHasCollege(Long userid) {
+    public Boolean userHasCollege(String userid) {
         Optional<User> _user1 = userRepository.findById(userid);
         if(_user1.isEmpty()) return false;
         User user1 = _user1.get();
@@ -135,7 +135,7 @@ public class UserService {
     public int saveUserData(User user) {
         String email = user.getEmail();
         String username = user.getUsername();
-        Long id = user.getId();
+        String id = user.getId();
         if(!userRepository.existsById(id)) {
             System.out.println("Invalid User, cant save!");
             return -1;
