@@ -12,16 +12,18 @@ import java.util.List;
 @Repository
 public interface UserRepository extends MongoRepository<User, Long> {
 
-    @Query("{ 'username' : ?0 }")
+    @Query("{username : '?0' }")
     List<User> findUserByUsername(String username);
-    @Query("{ 'email' : ?0 }")
+    @Query("{email : '?0' }")
     List<User>findUserByEmail(String email);
-    @Query("{ 'name' : ?0 }")
+    @Query("{name : '?0' }")
     List<User>findUserByName(String name);
-    @Query("{ 'college.name' : ?0 }")
+    @Query("{college.name : '?0' }")
     List<User>findUserByCollege(String College);
 
+    @Query("{college : '?0' }")
     Boolean existsUserByUsername(String username);
+    @Query("{email : '?0' }")
     Boolean existsUserByEmail(String email);
 
 }

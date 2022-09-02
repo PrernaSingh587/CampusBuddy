@@ -1,8 +1,6 @@
 package com.example.campusbuddy.controller;
 
-import com.example.campusbuddy.entity.TestTable;
 import com.example.campusbuddy.entity.dao.UserDao;
-import com.example.campusbuddy.repository.TestRepository1;
 import com.example.campusbuddy.service.UserService;
 import com.example.campusbuddy.entity.User;
 
@@ -105,15 +103,6 @@ public class UserController {
     public Boolean userHasCollege(@PathVariable Long id) {
         System.out.println("inside");
         return userService.userHasCollege(id);
-    }
-
-    @Autowired
-    TestRepository1 testRepository1;
-
-    @PostMapping(value = "/addSome")
-    public String p(@RequestBody TestTable testTable) {
-        testRepository1.save(testTable);
-        return "Succeeded!";
     }
 
 
