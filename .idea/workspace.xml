@@ -5,33 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="becb51e9-8605-465f-95a0-fd5f5c53e715" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/EventController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/FirebaseController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/PlaceController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/TweetController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Tweet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/EventRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/PlaceRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/TweetRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/EventService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/FileService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/PlaceService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/TweetService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/CollegeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/CollegeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Academic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Academic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/College.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/College.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Misc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Place.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Place.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/CollegeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/CollegeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/CollegeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/CollegeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/campusbuddy-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/campusbuddy-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/campusbuddy-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/campusbuddy-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.example.campusbuddy.CampusbuddyApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.example.campusbuddy.CampusbuddyApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.example.campusbuddy.CampusbuddyApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.example.campusbuddy.CampusbuddyApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
