@@ -5,7 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="becb51e9-8605-465f-95a0-fd5f5c53e715" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/EventController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/FirebaseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/PlaceController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/TweetController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Tweet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/EventRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/PlaceRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/TweetRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/EventService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/FileService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/PlaceService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/TweetService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/CollegeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/CollegeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Academic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Academic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/College.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/College.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Misc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Place.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/Place.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/CollegeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/CollegeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/CollegeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/CollegeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/campusbuddy/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -31,6 +57,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.7.1/spring-data-commons-2.7.1.jar!/org/springframework/data/repository/CrudRepository.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,7 +84,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/college")
@@ -14,6 +15,7 @@ public class CollegeController {
     @Autowired
     CollegeService collegeService;
 
+    //done
     @PostMapping("/add-college")
     public int addCollegeToDb(@RequestBody College college) {
         int res;
@@ -21,9 +23,16 @@ public class CollegeController {
         return res;
     }
 
+    //done
     @GetMapping("/list-colleges")
     public List<College> listColleges() {
-
         return collegeService.listColleges();
     }
+
+    //done
+    @GetMapping("/list-college-names")
+    public List<Map<String,String>> listCollegesNames() {
+        return collegeService.listCollegesNames();
+    }
+
 }

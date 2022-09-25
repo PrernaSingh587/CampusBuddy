@@ -18,10 +18,9 @@ public interface UserRepository extends MongoRepository<User, String> {
     List<User>findUserByEmail(String email);
     @Query("{name : '?0' }")
     List<User>findUserByName(String name);
-    @Query("{college.name : '?0' }")
-    List<User>findUserByCollege(String College);
-
-    @Query("{college : '?0' }")
+//    @Query("{college.id : '?0' }")
+//    List<User>findUserByCollegeId(String collegeId);
+    @Query("{username : '?0' }")
     Boolean existsUserByUsername(String username);
     @Query("{email : '?0' }")
     Boolean existsUserByEmail(String email);

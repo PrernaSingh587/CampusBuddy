@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,8 +16,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "user_profile")
+@Document
 public class User implements Serializable {
 
     @Id
@@ -36,7 +36,7 @@ public class User implements Serializable {
     private int savedItemsId;
     @ManyToOne
     @JoinColumn
-    private College college;
+    private String collegeid;
     @Column
     private int itemsId;
     @Column(name="date_of_birth")
@@ -47,6 +47,7 @@ public class User implements Serializable {
     private String branch;
     @Column
     private String academicYear;
-
+    @Column
+    private Boolean isOnline;
 
 }

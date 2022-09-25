@@ -6,11 +6,12 @@ import com.example.campusbuddy.entity.dao.UserDao;
 import com.example.campusbuddy.repository.CollegeRepository;
 import com.example.campusbuddy.repository.UserRepository;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class UserService {
@@ -24,13 +25,49 @@ public class UserService {
 
     public List<User> findAll() {
         List<User> userList = userRepository.findAll();
+        System.out.println(userList.size());
         if(userList.size()>0) {
             for(int i=0;i<userList.size();i++) {
-                System.out.println(userList.get(i).getCollege());
+                System.out.println(userList.get(i).getCollegeid());
             }
             return userList;
         }
             return null;
+    }
+
+
+    public List<Map<String,String>> listUsersOnlineStatus(String collegeId) {
+        try {
+            Optional<College> college_ = collegeRepository.findById(collegeId);
+            College college = college_.get();
+            List<String> userListIds = college.getUsersId();
+            List<Map<String,String>>userOnlineStatus = new ArrayList<Map<String,String>>();
+
+            if(userListIds!=null && userListIds.size()>0) {
+                for(int i=0;i<userListIds.size();i++) {
+                    Map<String,String>mp = new HashMap<>();
+                    String userid = userListIds.get(i);
+
+                    Optional<User> user_ = userRepository.findById(userid);
+                    User user = user_.get();
+
+                    mp.put("userid", user.getId());
+                    mp.put("name", user.getName());
+                    mp.put("username", user.getUsername());
+                    if(user.getIsOnline()!= null && user.getIsOnline()==true)
+                    mp.put("isOnline", "true");
+                    else  mp.put("isOnline", "false");
+
+                    userOnlineStatus.add(mp);
+                }
+                return userOnlineStatus;
+            }
+            else return null;
+        } catch (Exception e) {
+            System.out.println(e + "Cant fetch online status");
+            return null;
+        }
+
     }
 
     public String save(UserDao userdao) {
@@ -44,8 +81,8 @@ public class UserService {
 //        FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(firebaseId);
 //        String uid = decodedToken.getUid();
 
-        if(userRepository.existsUserByEmail(email) ||
-                userRepository.existsUserByUsername(username)) {
+        if(userRepository.findUserByEmail(email).size()!=0 ||
+                userRepository.findUserByUsername(username).size()!=0) {
             System.out.println("Already Present!");
             return null;
         }
@@ -67,23 +104,29 @@ public class UserService {
         return userId;
     }
 
-    public int addCollegeToUser(String college, String userid) {
+    public int addCollegeToUser(String collegeid, String userid) {
 
         try {
-            if(!userRepository.existsById(userid) || !collegeRepository.existsCollegeByCollege(college))  {
+            Optional<User> user_ = userRepository.findById(userid);
+            User user = user_.get();
+            Optional<College> college_ = collegeRepository.findById(collegeid);
+            College college = college_.get();
+
+            if(user == null || college == null)  {
                 System.out.println("Invalid Userid or College Name!");
                 return  -1;
             }
-            Optional<User> _user = userRepository.findById(userid);
-            User user = _user.get();
-            College _college =  collegeRepository.findByCollege(college);
-            user.setCollege(_college);
+
+            user.setCollegeid(collegeid);
             userRepository.save(user);
 
-            List<User> users = _college.getUsers();
-            users.add(user);
-            _college.setUsers(users);
-            collegeRepository.save(_college);
+            List<String> userList_ = college.getUsersId();
+            if(userList_ == null) {
+                userList_ = new ArrayList<>();
+            }
+            userList_.add(user.getId());
+            college.setUsersId(userList_);
+            collegeRepository.save(college);
         } catch(Exception e) {
             System.out.println(e);
             return -1;
@@ -95,7 +138,11 @@ public class UserService {
     }
 
     public UserDao getUserById(String id) {
+        System.out.println(id);
         Optional<User> user_ = userRepository.findById(id);
+        if(user_.isEmpty()) {
+            return null;
+        }
         User user =  user_.get();
         String username = user.getUsername();
         String name = user.getName();
@@ -129,7 +176,7 @@ public class UserService {
         Optional<User> _user1 = userRepository.findById(userid);
         if(_user1.isEmpty()) return false;
         User user1 = _user1.get();
-        return user1.getCollege()!=null ? true : false;
+        return user1.getCollegeid()!=null ? true : false;
     }
 
     public int saveUserData(User user) {
@@ -154,4 +201,54 @@ public class UserService {
         userRepository.save(user);
         return 0;
     }
+
+    public Map<String,String> getUserCollege(String userid) {
+        try {
+            Optional<User> user_ = userRepository.findById(userid);
+            if(user_.isEmpty()) return null;
+            User user = user_.get();
+            System.out.println(user.getUsername());
+            if(user.getCollegeid() == null) return null;
+
+            String collegeId = user.getCollegeid();
+            Optional<College> college_ = collegeRepository.findById(collegeId);
+
+            Map<String,String> mp = new HashMap<String,String>();
+            mp.put("label", college_.get().getCollege());
+            mp.put("value", college_.get().getId());
+            return mp;
+        } catch(Exception e) {
+            System.out.println("Error in fetching college for user");
+            return null;
+        }
+    }
+
+    public int toggleOnline(Map<String, String> requestBody) {
+        String userid = requestBody.get("userid");
+        try {
+            Optional<User> user_ = userRepository.findById(userid);
+            if(user_.isEmpty()) return -1;
+            User user = user_.get();
+
+            Boolean isOnlineStatus = user.getIsOnline();
+            if(isOnlineStatus==null || isOnlineStatus==false){
+                user.setIsOnline(true);
+                userRepository.save(user);
+                System.out.println("User just logged in! " + user.getUsername());
+                return 1;
+            }
+            if(isOnlineStatus == true) {
+                user.setIsOnline(false);
+                userRepository.save(user);
+                System.out.println("User just logged out! " + user.getUsername());
+                return 0;
+            }
+            return 1;
+
+        } catch (Exception e) {
+            System.out.println("Error in toggling online status for user");
+            return -1;
+        }
+    }
+
 }
