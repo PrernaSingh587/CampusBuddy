@@ -14,11 +14,7 @@
 	<name>campusbuddy</name>
 	<description>campusbuddy</description>
 	<properties>
-
-			<java.version>11</java.version>
-
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
